@@ -7,6 +7,7 @@ With the grade manager a student is able to track his school grades and get the 
 * [MariaDB](https://mariadb.org/) - Database
 * [Apache2](https://httpd.apache.org/) - Webserver (can be any webserver)
 * [ReactJS](https://reactjs.org/) - Frontend JavaScript Framework
+* [Redux](https://redux.js.org/) - State Container
 * [PHP7](https://www.php.net/) - used for RestAPI
 
 ## Contributing
