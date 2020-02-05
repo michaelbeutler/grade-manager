@@ -1,7 +1,7 @@
 import React from 'react';
 
 // antd components
-import { Menu, Icon } from "antd";
+import { Menu, Icon, Divider } from "antd";
 
 export const SiderMenu = props => {
     const { SubMenu } = Menu;
@@ -10,10 +10,13 @@ export const SiderMenu = props => {
         <Menu
             onClick={(e) => { console.log(e) }}
             style={{ height: '100vh' }}
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
+            defaultSelectedKeys={['0']}
             mode="inline"
         >
+            <Menu.Item key="0">
+                <Icon type="dashboard" />
+                <span>Dashboard</span>
+            </Menu.Item>
             <SubMenu
                 key="sub1"
                 title={

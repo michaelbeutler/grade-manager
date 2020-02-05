@@ -19,11 +19,15 @@ export const App = props => {
                         left: 0,
                     }}
                     theme="light"
-                ><SiderMenu /></Sider>
+                >
+                    <div className="sider-brand">
+                        GradeManager
+                    </div>
+                    <SiderMenu /></Sider>
                 <Layout>
                     <Header>Header</Header>
                     <Content>Content</Content>
-                    <Footer>Footer</Footer>
+                    <Footer>&!copy</Footer>
                 </Layout>
             </Layout>
         </div>
