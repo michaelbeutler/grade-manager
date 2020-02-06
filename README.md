@@ -10,7 +10,7 @@ Goal of this project is to learn new stuff and enhance our skills in web program
 * [Apache2](https://httpd.apache.org/) - Webserver (can be any webserver)
 * [ReactJS](https://reactjs.org/) - Frontend JavaScript Framework
 * [Redux](https://redux.js.org/) - State Container
-* [PHP7](https://www.php.net/) - used for RestAPI
+* [PHP7.3](https://www.php.net/) - used for RestAPI
 
 ## Contributing
 
