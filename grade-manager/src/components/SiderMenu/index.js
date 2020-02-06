@@ -1,7 +1,7 @@
 import React from 'react';
 
 // antd components
-import { Menu, Icon, Divider } from "antd";
+import { Menu, Icon } from "antd";
 
 export const SiderMenu = props => {
     const { SubMenu } = Menu;

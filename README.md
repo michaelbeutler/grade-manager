@@ -1,6 +1,8 @@
 # Grade Manager
 
-With the grade manager a student is able to track his school grades and get the avrage for each class and teacher. It also provides functions to manage absence and basic exam planing.
+With the grade manager a student is able to track his school grades and get the avrage for each class and subclass. It also provides functions to manage absence and basic exam planing.
+The project has a rest api in the background and react js app in the frontend. The backend will be writen with php and is also equiped with some basic auth.
+Goal of this project is to learn new stuff and enhance our skills in web programming.
 
 ## Built With
 
