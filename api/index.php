@@ -17,9 +17,16 @@
 
     $url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : [];
     $url_params_tmp = isset($_SERVER['REQUEST_URI']) ? explode('?', ltrim($_SERVER['REQUEST_URI'])) : [];
-    $url_params = isset($url_params_tmp[1]) ? explode('&', ltrim($url_params_tmp[1])) : [];
-
-    var_dump($url_params);
+    $url_params_tmp2 = isset($url_params_tmp[1]) ? explode('&', ltrim($url_params_tmp[1])) : [];
+    
+    $url_params = [];
+    foreach ($url_params_tmp2 as $param) {
+        $tmp = explode('=',$param);
+        if (count($tmp) == 2) {
+            $url_params[$tmp[0]] = urldecode($tmp[1]);
+        }
+    }
+    
 
     $params = [];
     if (count($url) > 1) {
@@ -38,13 +45,14 @@
         //echo "<br>";
         switch ($_SERVER["REQUEST_METHOD"]) {
             case 'GET':
-                $controller->get($params[0]);
+                $controller->get($params[0], $url_params);
                 break;
 
             case 'POST':
-                $controller->post($params);
+                $controller->post($params, $url_params);
                 break;
-
+            case 'PUT':
+                $controller->put($params[0], $url_params);
             default:
                 # code...
                 break;

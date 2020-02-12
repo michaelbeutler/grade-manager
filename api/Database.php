@@ -9,6 +9,9 @@ class Database
         try {
             $this->_pdo = new PDO('mysql:host=' . DATABASE_HOSTNAME . ';dbname=' . DATABASE_DATABASE . ";charset=utf8", DATABASE_USERNAME, DATABASE_PASSWORD);
             $this->_pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            
+            // debug
+            $this->_pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         } catch (PDOException $e) {
             die($e->getMessage());
         }
@@ -84,6 +87,7 @@ class Database
         }
 
         $sql = "SELECT * FROM {$table}{$conditionString}{$order}{$limit}";
+        
         if ($this->query($sql, $bind)) {
             if (!count($this->_result)) return false;
             return true;
@@ -126,6 +130,7 @@ class Database
         if (!$this->query($sql, $values)->error()) {
             return true;
         }
+        
         return false;
     }
 
@@ -142,12 +147,13 @@ class Database
         $fieldString = trim($fieldString);
         $fieldString = rtrim($fieldString, ',');
         $sql = "UPDATE `" . $table . "` SET {$fieldString} WHERE `id` = {$id};";
-
+ 
         if (!$this->query($sql, $values)->error()) {
             return true;
-        }
+        } 
         return false;
     }
+    
 
     public function delete($table, $id)
     {
